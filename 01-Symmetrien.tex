@@ -1,0 +1,1301 @@
+\section{Symmetrien in der Physik}
+
+\subsection{Aufbau der Materie}
+
+In dieser Vorlesung werden wir uns mit den elementaren Bausteinen der Materie
+und ihren Wechselwirkungen befassen. Dadurch soll ein quantifizierbarer und
+nachvollziehbarer Zugang zur Wirklichkeit gefunden werden. Zunächst sollten wir
+jedoch die Frage klären, was ``elementar'' überhaupt bedeutet. In der
+Vergangenheit wurden zunächst die Atome für unteilbar gehalten, dann entdeckte
+man Elektronen, Neutronen, Protonen und heute sprechen wir von ``Quarks'' als
+Elementarteilchen. Im Folgenden werden wir uns mit diesem Postulat kritisch
+auseinandersetzen.
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-0.2,-4.4)(7.5,1.25)
+
+\rput(1.5,0.7){Elementarteilchen}
+\rput(5.2,0.7){Wechselwirkungen}
+
+\psellipse[linewidth=0.04,dimen=outer](1.5,0.7)(1.5,0.5)
+\psellipse[linewidth=0.04,dimen=outer](5.2,0.7)(1.5,0.5)
+
+\rput(3.2,-0.17){Hadronen}
+\psline{->}(3.2,-0.47)(3.2,-0.87)
+
+\rput(3.2,-1.17){Kerne}
+\psline{->}(3.2,-1.47)(3.2,-1.87)
+
+\rput(3.2,-2.17){Atome}
+\psline{->}(3.2,-2.47)(3.2,-2.87)
+
+\rput(3.2,-3.17){Moleküle}
+\psline{->}(3.2,-3.47)(3.2,-3.87)
+\psline{->}(4.2,-3.47)(4.8,-3.87)
+\psline{->}(2.2,-3.47)(1.6,-3.87)
+
+\rput(3.2,-4.17){Flüssigkeit}
+\rput(5.2,-4.17){Festkörper}
+\rput(1.2,-4.17){Gas}
+
+% Trennlinien
+\psline(5.15,-1.6)(7.4,-1.6)
+\psline(1.55,-2.8)(0.0,-2.8)
+
+\psline{->}(5.2,0)(5.2,-1.4)
+\psline{->}(1.5,0)(1.5,-2.6)
+
+\psline{->}(5.2,-1.8)(5.2,-3.87)
+
+\rput[l](5.4,-0.8){Starke und}
+\rput[l](5.4,-1.2){Schwache WW}
+\rput[l](5.4,-2.6){EM WW}
+\rput{-90}(0.6,-0.4){\rput(0.9,0.4){Diese Vorlesung}}
+\end{pspicture} 
+  \caption{Übersicht Elementarteilchen, Wechselwirkungen.}
+\end{figure}
+
+Primär werden wir es mit der starken, schwachen sowie der elektromagnetischen
+Wechselwirkung zu tun haben. Die Gravitation wird in dieser Vorlesung nur eine
+untergeordnete Rolle spielen und kann so lange wir Elementarteilchen
+betrachten vernachlässigt werden.
+
+\sfigure[H]%
+	{1-EigenschaftenDerWechselwirkungen.pdf}
+	{\BethgeSchroeder, S. 10}
+	{Charakteristische Eigenschaften der Wechselwirkungen.}
+	
+\sfigure[H]%
+	{1-Langenskalen.pdf}
+	{\FrauenfelderHenley, S. 2}
+	{Typische Längenskalen. Der Bereich unterhalb von $10^{-18}\mathrm{m}$ ist 
+		unerforscht! Es ist nicht bekannt, ob dort neue Kräfte und Erscheinungen zu
+		erwarten sind.}%
+	
+\sfigure[H]%
+	{1-Anregungsenergien.pdf}
+	{\FrauenfelderHenley, S. 2}
+	{Bereich der Anregungsenergien. Die angegebenen Temperaturen entsprechen den
+	jeweiligen Energien.}%
+	
+\sfigure[H]%
+	{1-Dichtebereiche.pdf}
+	{\FrauenfelderHenley, S. 2}
+	{Dichtebereiche.}%
+	
+\subsubsection{Symmetriebrechung}
+
+Es sei eine Temperaturskala mit Phasenübergang bei einer kritischen Temperatur
+$T_C$ gegeben. In der Thermodynamik verwenden wir die \emph{freie Energie} $F$,
+um den Zustand eines Systems zu beschreiben, wobei die freie Energie von einem
+Ordnungsparameter $\ph$ abhängt.
+
+Generell erhält man für hohe Temperaturen bzw. Energien eine höhere Symmetrie
+welche bei niedrigeren Temperaturen gebrochen wird.
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-1,-1)(4.5,2.5)
+ \psaxes[labels=none,ticks=none]{->}%
+ (0,0)(-0.5,-0.5)(4,2)[,-90][\color{gdarkgray}$T$,0]
+ 
+ \psyTick(1){\color{gdarkgray}T_C}
+ 
+ \rput[l](0.5,1.5){Hohe Symmetrie}
+ 
+ \rput[l](0.5,0.5){Niedere Symmetrie}
+\end{pspicture}
+  \caption{Symmetriebrechung durch Temperaturänderung.}
+\end{figure}
+
+\begin{bspn}
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-2.5,-1)(2.5,2.5)
+ \psaxes[labels=none,ticks=none]{->}%
+ (0,0)(-2,-0.5)(2,2)[\color{gdarkgray}$\ph$,-90][\color{gdarkgray}$F$,0]
+
+ \pscircle[linewidth=0.6pt](0,0.2){0.2}
+ 
+ \psplot[linewidth=1.2pt,%
+	     linecolor=darkblue,%
+	     algebraic=true]%
+	     {-1.5}{1.5}{0.6*x^2}
+ 
+ \rput[l](1.2,0.4){\color{gdarkgray}$T>T_c$}
+ 
+ \rput(0,-0.8){\color{gdarkgray}Symmetrie}
+\end{pspicture}
+\begin{pspicture}(-2.5,-1.6)(2.5,2.5)
+ \psaxes[labels=none,ticks=none]{->}%
+ (0,0)(-2,-0.5)(2,2)[\color{gdarkgray}$\ph$,-90][\color{gdarkgray}$F$,0]
+ 
+ \pscircle[linewidth=0.6pt](0.85,-0.35){0.2}
+ 
+ \psplot[linewidth=1.2pt,%
+	     linecolor=darkblue,%
+	     algebraic=true]%
+	     {-1.5}{1.5}{x^4-1.5*x^2}
+ 
+ \rput[l](0.2,1.4){\color{gdarkgray}$T<T_c$}
+ 
+ \psbezier[arrows=<->](-0.85,-0.6)(-0.55,-1.2)(0.55,-1.2)(0.85,-0.6)
+ \rput(0,-1.4){\color{gdarkgray}Symmetriebrechnung}
+\end{pspicture}
+  \caption{Symmetriebrechung in der Thermodynamik.}
+\end{figure}
+
+Wir kennen dieses Verhalten bereits von Ferromagneten. Hier wird die Ordnung
+durch den Ordnungsparameter Magnetisierung ($\ph=M$) beschrieben. Wird eine
+kritische Temperatur überschritten (\emph{Curie-Temperatur}), so haben die
+elementaren Dipole keine Vorzugsrichtung mehr und der Magnet wird zum
+Paramagneten.
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-1,-2)(4,2.5)
+ \psaxes[labels=none,ticks=none]{->}%
+ (0,0)(-0.5,-2)(3.5,2)[\color{gdarkgray}$H$,-90][\color{gdarkgray}$T$,0]
+
+ \psplot[linewidth=1.2pt,%
+	     linecolor=darkblue,%
+	     algebraic=true]%
+	     {0}{1.15}{x^4}
+ 
+ \psplot[linewidth=1.2pt,%
+	     linecolor=darkblue,%
+	     algebraic=true]%
+	     {0}{1.15}{-x^4}
+ 
+  \rput[bl](0.2,1.2){\color{gdarkgray}para}
+ \rput[bl](0.2,-1.2){\color{gdarkgray}ferro}
+\end{pspicture}
+\begin{pspicture}(-1,-1)(4,2.5)
+ \psaxes[labels=none,ticks=none]{->}%
+ (0,0)(-0.5,-0.5)(3.5,2)[\color{gdarkgray}$T$,-90][\color{gdarkgray}$M$,0]
+ 
+ \psarc[linewidth=1.2pt,%
+	    linecolor=darkblue]%
+	   (0.5,0){2}{0}{87}
+	   
+ \psxTick(2.5){\color{gdarkgray}T_c}
+ 
+ \rput[lb](1.5,0.25){\color{gdarkgray}ferro}
+ \rput[lb](2.7,0.25){\color{gdarkgray}para}
+\end{pspicture}
+  \caption{Verhalten eines Ferromagneten bei Curie-Temperatur.}
+\end{figure}
+
+Bei dieser Temperatur liegt eine höhere Symmetrie vor, denn der Magnetismus ist
+isotrop also Richtungsunabhängig. Kühlt man den Magneten ab, ordnen sich die
+Dipole wieder entlang ihrer Vorzugsrichtung starr an, die räumliche Symmetrie
+innerhalb der ferromagnetischen Domäne geht verloren. Diesen Vorgang nennt man
+spontane Symmetriebrechung.
+
+Betrachten wir die Welt um uns herum, so finden wir zahlreiche gebrochene
+Symmetrien, die bei hohen Energien bzw. Temperaturen wiederhergestellt werden.
+Kristalle schmelzen; gebundene Zustände werden in ihre Bestandteile zerlegt wie
+z.B. Gase gehen in Plasmen über etc.
+
+Um die elementaren Bestandteile der Materie zu finden, ist es daher hilfreich,
+die Energie immer weiter zu erhöhen und die verbleibenden Symmetrien zu
+skechieren.
+\bsphere
+\end{bspn}
+
+Zur Beschreibung der Gravitation verfügen wir über die Einsteinschen
+Feldgleichungen und die Allgemeine Relativitätstheorie, für den
+Elektromagnetismus über die Maxwell Gleichungen. In beiden Fällen
+sind die Gleichungen lorentzinvariant, d.h. Lorentztransformationen sind
+elementare Symmetrieoperationen. 
+Für die starke und schwache Wechselwirkung sind (noch) keine Grundgleichungen
+verfügbar, man ist daher auf der Suche nach zusätzlichen Symmetrien.
+ 
+Das Konzept der Symmetrie spielt eine wichtige Rolle bei hohen Energien, da
+dort neue Symmetrien auftreten. Man vermutet, dass sich bei sehr hohen Energien
+die starke, schwache und elektromagnetische Wechselwirkung und die Gravitation
+zu einer einzigen Wechselwirkung mit einer neuen Symmetrie vereinen. Diese
+Symmetrie wird im Niederenergiebereich gebrochen und führt zu den
+unterschiedlichen Wechselwirkungen, die wir mit niederer Symmetrie heute
+beobachten.
+\twofigures[!htbp][0.4][0.5]%
+	{1-VergleichGesamtwirkungsquerschnitte.pdf}%
+	{\FrauenfelderHenley, S. 428}%
+	{1-EnergienVergleich.pdf}%
+	{P. A. Tipler, R. A. Llewellyn, Modern Physics, Fifth Edition S. 605}
+	{Vergleich der Gesamtwirkungsquerschnitte von hadronischen, elektromagnetischen
+	und schwachen Prozessen an Nukleonen. $\sigma$ bezeichnet den geometrischen
+	Wirkungsquerschnitt eines Nukleons, $K$ gibt die kinetische Energie an.}%
+
+Die vermutetete Symmetrie kann helfen, die Zustände zu
+erklären, die bei der Entstehung des Universums vorzufinden waren. Denn zu
+jeder neuen Symmetrie gehört auch ein neuer Erhaltungssatz. Aber auch das
+Verhalten komplexer Kernmaterie zeigt Phasenübergänge und Symmetriebrechung. 
+
+\sfigure[H][0.8]%
+	{1-PhasendiagrammKerne.pdf}%
+	{\FrauenfelderHenley, S. 514}%
+	{Phasendiagramm für Kerne.}
+
+
+\begin{bspn}
+Betrachten wir die Temperaturkurve von Kernmaterie in Abhängigkeit der
+Anregungsenergie pro Nukleon, so ergibt sich eine große Ähnlichkeit zum Verlauf der Temperaturkurve von
+Wasser in Abhängigkeit der Anregungsenergie pro Molekül. Solche Analogien
+helfen und dabei, das Verhalten der Kerne auf bekanntes zu übertragen und so
+ein Modell für die Kerne zu entwickeln.\bsphere
+\end{bspn}
+
+\sfigure[H]%
+	{1-TemperaturdiagrammKernmatWasser.pdf}%
+	{\BethgeWalter, S. 216}%
+	{Temperaturdiagramm für (a) Kernmaterie und (b) Wasser.}
+
+\subsection{Symmetrien und Erhaltungssätze (klassisch)}
+
+In diesem Abschnitt sollen Symmetrien mathematisch formuliert werden. Durch
+diesen Formalismus lässt sich aus jeder Symmetrie ein Erhaltungssatz ableiten.
+
+Unter einer Symmetrie versteht man eine Operation $\op{S}$, die ein
+physikalisches Objekt oder Gesetzt $O$ invariant lässt,
+\begin{align*}
+\op{S}(O) = O.
+\end{align*}
+$O$ nennt man auch \emph{Observable}.
+
+\begin{bspn}
+\emph{Paritätssymmetrie}. 
+Wir beobachten ein Phänomen bspw. eine Teilchenbewegung sowohl gewöhnlich als
+auch durch einen Spiegel. Eine Symmetrie liegt genau dann vor, wenn sich die
+Physik im Spiegelbild nicht ändert.\bsphere
+\end{bspn}
+\begin{bspn}
+\emph{Translationssymmetrie}.
+Wechseln zwei Teilchen in einem abgeschlossenen homogenen System miteinander,
+so ist die Wechselwirkung vom Koordinatenursprung unabhängig.
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-0.1,-1.79)(5.6,1.77)
+\pscircle[linewidth=0.04,dimen=outer](0.3,0.24){0.32}
+\pscircle[linewidth=0.04,dimen=outer](5.2,1.38){0.32}
+
+\psline(0.7928483,0.4704805)(1.3136523,0.21520971)(1.695397,0.7339302)(2.2282233,0.44050884)(2.5597954,0.9853575)(3.0855687,0.64777446)(3.4432688,1.2427961)(3.9439557,0.9182771)(4.2624636,1.4380393)(4.674827,1.1276263)
+\psline(3.5,-1.7)(0.74,-0.09)
+\psline(3.5,-1.7)(5.16,0.87)
+\psdots(3.5,-1.7)
+
+\rput(0.3,0.24){\color{gdarkgray}1}
+\rput(5.2,1.38){\color{gdarkgray}2}
+
+\rput(4.9,-0.2){\color{gdarkgray}$\vec{x}_1$}
+\rput(2,-1.25){\color{gdarkgray}$\vec{x}_2$}
+\rput(2.4,1.4){\color{gdarkgray}$V(\abs{\vec{x}_1-\vec{x}_2})$}
+\end{pspicture} 
+  \caption{2-Teilchen-Translationsinvarianz.}
+\end{figure}
+
+Eine Symmetrieoperation ist daher gegeben durch,
+\begin{align*}
+\hat{S}: \vec{x}_i \mapsto \vec{x}_i + \vec{a},
+\end{align*}
+wobei $\vec{a}$ für einen beliebigen Koordinatenursprung steht.
+$\op{S}$ verändert als Symmetrieoperation die Wechselwirkung $V$
+zwischen den Teilchen nicht, d.h. $\hat{S}(V) = V$. Aufgrund dieser Symmetrie erhalten
+wir sofort die \emph{Impulserhaltung}.
+\begin{align*}
+\vec{p} = \vec{p}_1+\vec{p}_2,
+\end{align*}
+denn es gilt
+\begin{align*}
+\frac{\diffd}{\dt}\vec{p} = -\nabla V = -(\nabla_1+\nabla_2)V = -\nabla_1V -
+\nabla_2V = 0.\Rightarrow \vec{p}=\const.\bsphere
+\end{align*}
+\end{bspn}
+Um das letzte Beispiel zu verallgemeinern, führen wir die
+\emph{Hamiltonfunktion}
+\begin{align*}
+H(p_i,q_i),
+\end{align*}
+ein mit den generalisierten Koordinaten $q_i$ und den kanonischen Impulsen
+$p_i$. Eine Translation hat nun die Form,
+\begin{align*}
+\hat{S}: q_i \mapsto q_i + \delta q_i.
+\end{align*}
+Gilt $\hat{S}(H) = H$, so ist $\hat{S}$ eine Symmetrieoperation, d.h. $\hat{S}$
+verändert die Hamiltonfunktion nicht. In diesem Fall gilt
+\begin{align*}
+&0 = \delta H = \delta q\sum_i \frac{\partial H}{\partial q_i} = -\delta q\sum_i
+\dot{p}_i.\\
+\Rightarrow & \frac{\diffd}{\dt} \sum_i \dot{p}_i = 0.
+\end{align*}
+Wir erhalten somit aus der Translationssymmetrie den Impulserhaltungssatz.
+
+Ananlog erhält man aus der Rotationssymmetrie den Drehimpulserhaltungssatz und
+aus der zeitlichen Translationssymmetrie die Energieerhaltung.
+
+\subsection{Symmetrien in der Quantenmechanik}
+Wir wollen die in der klassischen Mechanik entwickelte Theorie nun auf die
+Quantenmechanik erweitern.
+\begin{enumerate}[label=\arabic{*}.)]
+\item Die verallgemeinerten Impulse und Koordinaten werden durch Operatoren
+  ersetzt, die einer Vertauschungsrelation genügen.
+  \begin{align*}
+  \nrm{\hat{p}_i,\hat{q}_k} = i\hbar\delta_{ik}.
+  \end{align*}
+\item Die zu messenden Größen werden durch Erwartungswerte ersetzt,
+\begin{align*}
+\lin{\hat{\Omega}} = \int \dV \Psi^* \hat{\Omega}\Psi.
+\end{align*}
+\end{enumerate}
+Ist $\hat{\Omega}$ eine Erhaltungsgröße, verschwindet die zeitliche Ableitung.
+Es gilt 
+\begin{align*}
+i\hbar \frac{\diffd}{\dt}\lin{\hat{\Omega}}
+&= \int\dV i\hbar \frac{\diffd}{\dt}\left[\Psi^*\hat{\Omega}\Psi\right]
+\\&= \int \dV \left[\left(-\Psi^*i\hbar\frac{\diffd}{\dt}\right)\hat{\Omega}\Psi
+ + \Psi^*\hat{\Omega}\left(i\hbar\frac{\diffd}{\dt}\Psi\right)\right]
+\\ &= \int\dV -(\Psi^*\hat{H})\hat{\Omega}\Psi + \Psi^*\hat{\Omega}H\Psi
+\\ &= \int\dV \Psi^*\left(\hat{\Omega}\hat{H} - \hat{H}\Omega\right)\Psi
+\\ &= \lin{\nrm{\hat{H},\hat{\Omega}}}. 
+\end{align*}
+$\op{\Omega}$ ist also genau dann eine Erhaltungsgröße wenn $\op{H}$ und
+$\op{\Omega}$ vertauschen.
+\begin{bspn}
+Drehung um die $z$-Achse.
+\begin{align*}
+\hat{S}:\; & x\mapsto x\cos\ph - y\sin\ph,\\
+& y\mapsto x\sin\ph + y\cos\ph,\\
+&z\mapsto z.
+\end{align*}
+\begin{figure}[H]
+\centering
+\begin{pspicture}(0,-1.35)(1.4178126,1.35)
+\psline{->}(0.21,-0.50453126)(0.24,1.0649999)
+\psline{->}(0.21,-0.50453126)(1.06,0.025)
+\psline{->}(0.21,-0.50453126)(1.0,-1.0550001)
+
+\rput(1.2878126,0.235){$y$}
+
+\rput(1.1654688,-1.205){$x$}
+
+\rput(0.2334375,1.255){$z$}
+\psellipse[linecolor=darkblue](0.23,0.56000006)(0.23,0.17)
+\psline[linecolor=darkblue]{->}(0.38,0.45000005)(0.46,0.51000005)
+\end{pspicture} 
+\caption{Drehung um die $z$-Achse.}
+\end{figure}
+Für eine Drehung um $\delta \ph$ gilt daher,
+\begin{align*}
+&\delta x = - y\delta\ph,\\
+&\delta y = x\delta\ph,\\
+&\delta z = 0,\\
+\Rightarrow&\hat{S}\Psi(\vec{x}) = \Psi(\vec{x}) - \delta x
+\frac{\partial\Psi}{\partial x} + \delta y \frac{\partial\Psi}{\partial y}
+= \left(1-\delta\ph\left(x\frac{\partial}{\partial y}-y\frac{\partial}{\partial
+x} \right) \right)\Psi(\vec{x}).
+\end{align*}
+Die Drehung hängt also mit der $z$-Koordinate des Drehimpulses
+zusammen,
+\begin{align*}
+\hat{l}_z = \nrm{\hat{x}\times\hat{p}}_z = -i\hbar
+\left(x\frac{\partial}{\partial y} - y\frac{\partial}{\partial x}\right).
+\end{align*}
+Die Drehung um die $z$-Achse können wir damit schreiben als,
+\begin{align*}
+\op{S}\Psi(\vec{x}) = \left(1- \frac{i}{\hbar}\partial\ph
+\op{l}_z\right)\Psi(\vec{x}).
+\end{align*}
+Da wir infinitesimale Winkel $\delta\ph$ betrachten, können wir dies als
+Taylor-Entwicklung 1. Ordnung des Exponential-Operators auffassen. Beim
+Übergang zur kontinuierlichen Drehung erhält man,
+\begin{align*}
+\hat{S}:\;\Psi(\vec{x})\mapsto
+\exp\left\{\frac{i}{\hbar}\ph\hat{l}_z\right\}\Psi(\vec{x}).
+\end{align*}
+
+Man bezeichnet $\hat{l}_z$ als \emph{Erzeugende} der Drehung um
+die $z$-Achse. Betrachten wir nun den Hamilton Operator unter einer infinitesimalen
+Drehung,
+\begin{align*}
+\hat{S}\left(\lin{\hat{H}}\right)
+&= \int\dV \Psi^*\left(1-\frac{i}{\hbar}\delta\ph \op{l}_z\right)\hat{H}
+\left(1+\frac{i}{\hbar}\delta\ph \op{l}_z\right)\Psi\\
+&= \int\dV \Psi^*\hat{H}\Psi +
+\Psi^*\hat{H}\left(\frac{i}{\hbar}\delta\ph \op{l}_z\right)\Psi
+- \Psi^*\left(\frac{i}{\hbar}\delta\ph \op{l}_z\right)\hat{H}\Psi \\
+&+\underbrace{\frac{1}{\hbar^2}\delta\ph^2\Psi^*\op{l}_z\hat{H}\op{l}_z\Psi}_{ 
+= 0, \text{ da quadratisch in $\delta\ph$}.}\\
+&= \int\dV \Psi^*\left[\hat{H} - \frac{i}{\hbar}\left(\op{l}_z\hat{H} -
+\hat{H}\op{l}_z\right)\right]\Psi\\ &\overset{!}{=} \lin{\hat{H}},
+\end{align*}
+dann gilt die Gleichheit genau dann, wenn $\hat{l}_z$ mit dem Hamilton
+vertauscht,
+\begin{align*}
+\nrm{\hat{l}_z,\hat{H}} = 0.
+\end{align*}
+Rotationssymmetrie um die $z$-Achse impliziert also wie in der klassischen
+Mechanik die Erhaltung des Drehimpulses um die $z$-Achse.\bsphere
+\end{bspn}
+
+\subsection{Relativistische Invarianz}
+
+Eine \emph{Lorenztransformation}\footnote{Hendrik Antoon Lorentz (* 18. Juli
+1853 in Arnheim; † 4. Februar 1928 in Haarlem) war ein niederländischer
+Mathematiker und Physiker und Nobelpreisträger für Physik des Jahres 1902.}, 
+erhält den Abstand zweier Punkte in der Raumzeit. Eine Größe, die sich unter
+einer Lorentztransformation nicht ändert, heißt \emph{lorentzinvariant}.
+
+Die Lorenztransformation ist somit eine Symmetrieoperation $\hat{S}$ mit einer
+Invarianten $s$, dem raumzeitlichen Abstand, gegeben durch,
+\begin{align*}
+s^2 = c^2(t_1-t_2)^2 - (x_1-x_2)^2 - (y_1-y_2)^2 - (z_1-z_2)^2 = \const.
+\end{align*}
+\begin{bspn}
+Lineare Bewegung in $x$-Richtung mit Geschwindigkeit $v$,
+\begin{align*}
+\hat{S}:\; & ct' = c(\cosh \alpha)t - x(\sinh\alpha)\\
+& x' = x\cosh \alpha - c(\sinh \alpha)t\\
+& y' = y\\
+& z' = z
+\end{align*}
+wobei
+\begin{align*}
+&\cosh \alpha = \frac{1}{\sqrt{1-\beta^2}},\quad
+\sin\alpha = \frac{\beta}{\sqrt{1-\beta^2}},\quad
+ \beta=\frac{v}{c}.
+\end{align*}
+Da $\sinh^2 \alpha - \cosh^2 \alpha = 1$ gilt $\hat{S}(s^2)=s^2$.\bsphere
+\end{bspn}
+
+Um in der Raumzeit geschickt rechnen zu können, führen wir verallgemeinerte
+Vektoren ein, die \emph{Vierervektoren},
+\begin{align*}
+\vec{x}^\mu = \left\{ct,x,y,z \right\}.
+\end{align*}
+Für diese Vektoren definieren wir ein neues Skalarprodukt
+\begin{align*}
+\abs{\vec{x}}^2 = \lin{\vec{x}_\mu,\vec{x}^\mu} = \sum\limits_{\mu=0}^3
+x_\mu x^\mu = c^2t^2 - x^2-y^2-z^2.
+\end{align*}
+Die Energie $E=\frac{mc^2}{\sqrt{1-\beta^2}}$ und der Impuls $\vec{p} =
+\frac{m\vec{v}}{\sqrt{1-\beta^2}}$ bilden den Viererimpuls,
+\begin{align*}
+\vec{p}^\mu = \left\{ \frac{E}{c}, p_x, p_y, p_z\right\}.
+\end{align*}
+Durch obige Definition ist das Skalarprodukt invariant unter
+Lorentztransformationen. Insbesondere gilt
+\begin{align*}
+\lin{\hat{S}p_\mu,\hat{S}p^\mu} = \lin{p_\mu,p^\mu} = \sum\limits_{\mu=0}^3
+p_\mu p^\mu = \frac{E^2}{c^2} - p^2 = mc^2 = \const.\tag{*}
+\end{align*}
+
+Insbesondere erhalten wir für $p=0$ die Ruheenergie $E_0 = mc^2$.
+Durch Lorentztransformationen kann somit Ruhemasse in kinetische Energie
+umgewandelt werden und umgekehrt.
+\begin{bspn}
+Bei einem Stoßprozess sind $E_\tot$ und $\vec{p}_\tot$ erhalten, aber $m_\tot =
+\sum_i m_i\neq \const$. Insbesondere kann kinetische Energie in Ruhemasse und
+Ruhemasse in kinetische Energie umgewandelt werden.
+\begin{figure}[!htpb]
+  \centering
+\begin{pspicture}(-0.1,-2)(3,2)
+\psline{->}(0,1.5)(2,1.5)
+\psline[linestyle=dotted]{->}(0,0)(2,0)
+\psline{->}(0,-1.5)(2,-1.5)
+
+\rput(2.5,1.5){\color{gdarkgray}$E_+$}
+\rput(2.5,-1.5){\color{gdarkgray}$E_-$}
+\rput(2.5,0){\color{gdarkgray}$0$}
+\end{pspicture} 
+  \caption{Energie-Masse-Äquivalenz.}
+\end{figure}
+\textit{Zahlenbeispiel:} $10^{-4}g\entspr 2500 \mathrm{kWh}$.
+
+Aus (*) folgt,
+\begin{align*}
+E = \pm c\sqrt{p^2+m^2c^2}.
+\end{align*}
+Dass zwei Vorzeichen $\pm$ möglich sind, kündigt die Existenz von Antiteilchen
+an. Beispielsweise kann für $E_\kin > 2m_ec^2$ bei einem Stoßprozess ein
+$e^+,e^-$-Paar erzeugt werden.\bsphere
+\end{bspn}
+
+\subsection{Der Spin}
+Zur Charakterisierung eines Teilchens benötigt man folgende Größen:
+
+%\begin{table}
+\begin{tabular}[H]{ll}
+$m_\text{träge}$, $m_\text{schwer}$ & Gravitation\\
+$Q$ & Elektromagnetismus\\
+Farbladungen & Starke + Schwache WW\\
+$\vec{p},\vec{L},E$ & Beschreiben Bewegung des Schwerpunkts\\
+Spin & innerer Freiheitsgrad.
+\end{tabular}
+%\end{table}
+
+Wir wollen nun der Frage nachgehen wie viele ``Sorten'' Spin es geben kann.
+Klassisch wird der Spin eines Objekts oft mit dem Eigendrehimpuls
+identifiziert. Bei Elementarteilchen mit
+verschwindender Ausdehnung ($r\to0$) versagt jedoch die Vorstellung. Außerdem
+würde eine klassisch rotierende Ladung ein anderes magnetisches Moment erzeugen
+als das experimentell beobachtete (siehe $g$-Faktor des Elektonsr
+$g=2.001\ldots$).
+
+In der Quantenmechanik definiert man daher \emph{Spinoperatoren}, die den
+selben Vertauschungsrelationen wie Drehimpulsoperatoren folgen.
+\begin{align*}
+&\nrm{\hat{s}_i,\hat{s}_j} = i\hbar\ep_{ijk} \hat{s}_k,\qquad
+\ep_{123} =
+\begin{cases}
+1, & \text{zyklische Vertauschung von (1,2,3)},\\
+-1, & \text{antizyklische Vertauschung},\\
+0, & \text{sonst}.
+\end{cases}
+\end{align*}
+\begin{bspn} Im dreidimensionalen Fall erhalten wir,
+\begin{align*}
+\nrm{\hat{s}_x,\hat{s}_y} = i\hbar \ep_{xyz}\hat{s}_z.\bsphere
+\end{align*}
+\end{bspn}
+Das skalare Quadrat des Spins ist gegeben durch,
+\begin{align*}
+\hat{s}^2 = \underbrace{\hat{s}_x^2 + \hat{s}_y^2 + \hat{s}_z^2}_{\ge 0}.\tag{*}
+\end{align*}
+Die Eigenwerte von $\hat{s}$ werden mit $s$ die von $\hat{s}_z$ mit
+$m_s$ bezeichnet. Man kann zeigen dass die gemeinsamen Eigenzustände
+$\ket{s,m_s}$ von $\hat{s}$ und $\hat{s}_z$ ein VONS bilden. Da die Eigenwerte
+von $\hat{s}^2$ positiv sind (siehe (*)), lassen sie sich als $s(s+1)$
+schreiben, womit wir folgende Eigenwertgleichungen erhalten,
+\begin{align*}
+&\hat{s}^2\ket{s,m_s} = s(s+1)\hbar^2\ket{s,m_s},\\
+&\hat{s}_z\ket{s,m_s} = m_s\hbar\ket{s,m_s}.
+\end{align*}
+\begin{bemn}
+Da $\nrm{\hat{s}^2,\hat{s}_z}=0$, sind $\hat{s}^2$ und $\hat{s}_z$ zwei
+gleichzeitig beobachtbare Erhaltungsgrößen.\maphere
+\end{bemn}
+Wir wollen nun mit Hilfe der Eigenwertgleichungen $s$ und $m_s$ konkret
+berechnen. Dazu halten wir fest,
+\begin{align*}
+&\hat{s}^2\ket{s,m_s} = f(s,m_s)\ket{s,m_s},\\
+&\hat{s}^2-\hat{s}_z^2 = \underbrace{\hat{s}_x^2 + \hat{s}_y^2}_{\ge 0}.
+\end{align*}
+Es gilt also $f(s,m_s)\ge \hbar^2 m_s^2$, d.h. $m_s$ hat einen Maximalwert.
+
+Oft ist es geschickt anstatt mit $\hat{s}_x$, $\hat{s}_y$ oder $\hat{s}_z$ mit
+einer der folgenden Linearkombinationen zu rechnen.
+\begin{defnn}
+\emph{Leiteroperatoren}
+\begin{align*}
+&\hat{s}_+ := \hat{s}_x + i\hat{s}_y,&& \text{``Aufsteigeoperator''},\\
+&\hat{s}_- := \hat{s}_x - i\hat{s}_y,&& \text{``Absteigeoperator''}.
+\end{align*}
+Als Linearkombinationen von $\hat{s}_x$ und $\hat{s}_y$ erfüllen sie
+die Vertauschungsrelationen,
+\begin{align*}
+&\nrm{\hat{s}^2,\hat{s}_\pm} = 0,&&\text{d.h. }\hat{s}_\pm\text{ ändert $s$
+nicht}.\\ &\nrm{\hat{s}_z,\hat{s}_\pm} =\pm\hbar\hat{s}_\pm, &&\text{d.h.
+$\hat{s}_\pm$ ändert $m_s$}.\fishhere
+\end{align*}
+\end{defnn}
+Betrachten wir nun die zwei Zustände $\hat{s}_\pm\ket{s,m_s} $ und die Wirkung
+von $\hat{s}_z$ und $\hat{s}^2$,
+\begin{align*}
+\hat{s}_z\hat{s}_\pm\ket{s,m_s} &= \left(\hat{s}_\pm\hat{s}_z +
+\nrm{\hat{s}_z,\hat{s}_\pm}\right)\ket{s,m_s}
+= \left(\hat{s}_\pm\hat{s}_z \pm
+\hbar\hat{s}_\pm\right)\ket{s,m_s}
+\\ &= \left( \hbar m_s\hat{s}_\pm \pm
+\hbar\hat{s}_\pm\right)\ket{s,m_s}
+= \hbar (m_s \pm 1)\hat{s}_\pm\ket{s,m_s},\\
+\hat{s}^2\hat{s}_\pm\ket{s,m_s} &= \hat{s}_\pm\hat{s}^2\ket{s,m_s} =
+\hbar^2 l(l+1)\hat{s}_\pm\ket{s,m_s}.
+\end{align*}
+Da $m_s$ einen Maximalwert besitzt, erhalten wir so:
+
+$\hat{s}_+\ket{s,m_s}$ ist Eigenzustand zu $\hat{s}^2$ und $\hat{s}_z$ mit
+den Eigenwerten $\hbar^2s(s+1)$ bzw. $\hbar (m_s+1)$ oder der Nullvektor.
+
+$\hat{s}_-\ket{s,m_s}$ ist Eigenzustand zu $\hat{s}^2$ und $\hat{s}_z$ mit
+den Eigenwerten $\hbar^2s(s+1)$ bzw. $\hbar (m_s-1)$ oder der Nullvektor.
+
+Betrachten wir die Norm 
+$\norm{\hat{s}_\pm\ket{s,m_s}}^2=\bra{s,m_s}\hat{s}_\mp\hat{s}_\pm\ket{s,m_s}$
+und verwenden,
+\begin{align*}
+\hat{s}_\mp\hat{s}_\pm = (\hat{s}_x\mp i\hat{s}_y)(\hat{s}_x\pm i\hat{s}_y) =
+\hat{s}_x^2+\hat{s}_y^2 \pm i\nrm{\hat{s}_x,\hat{s}_y} = \hat{s}^2 -
+\hat{s}_z^2 \mp \hbar\hat{s}_z
+\end{align*}
+erhalten wir,
+\begin{align*}
+\norm{\hat{s}_\pm\ket{s,m_s}}^2 = \left[l(l+1) - m_s(m_s\pm1)\right]\hbar^2 \ge
+0.\tag{**}
+\end{align*}
+D.h. $-s\le m_s \le s$.
+
+Aufgrund der Einschränkung der möglichen $m_s$ muss $\hat{s}_+\ket{s,s}$ der
+Nullvektor sein, denn $\hat{s}_+$ erhöht $m_s$. Daher ist
+$\norm{\hat{s}_+\ket{s,s}}^2=0 \Rightarrow m_{s,\text{max}} = s$.
+
+Analog folgt $m_{s,\text{min}} = -s$. Alle möglichen $m_s$ haben daher einen
+ganzzahligen Abstand zu $l$, denn die Leiteroperatoren erhöhren bzw.
+erniedrigen stets um ganze Zahlen und müssen die Gleichung (**) erfüllen.
+
+Daher muss $-s = m_{s,\text{min}}$ ganzzahligen Abstand zu $s$ haben. D.h. $2s$
+ist ganzzahlig und daher sind für $s$ nur halbe oder ganze Zahlen zugelassen. 
+
+\begin{figure}[H]
+\centering
+\psset{unit=0.6cm}
+\begin{minipage}{0.4\linewidth}
+\begin{pspicture}(-1.6,-3.5)(4.8,3.8)
+\psaxes[labels=none,ticks=none,ticksize=1pt]{->}%
+ (0,0)(-0.5,-3.5)(4.5,3.5)[\color{gdarkgray}$s$,-90][\color{gdarkgray}$m_s$,0]
+ 
+\psdots[linecolor=darkblue](0,0)(2,0)(1,1)(1,-1)(2,2)(2,-2)(3,1)(3,3)(3,-1)(3,-3)
+
+\psyTick(3){\color{gdarkgray}3/2}
+\psyTick(2){\tiny{\color{gdarkgray}1}}
+\psyTick(1){\small\color{gdarkgray}1/2}
+\psyTick(-1){\small\color{gdarkgray}-1/2}
+\psyTick(-2){\small\color{gdarkgray}-1}
+\psyTick(-3){\small\color{gdarkgray}-3/2}
+\psxTick(1){\small\color{gdarkgray}1/2}
+\psxTick(2){\small\color{gdarkgray}1}
+\psxTick(3){\small\color{gdarkgray}3/2}
+
+\end{pspicture}
+\end{minipage}
+\begin{minipage}{0.4\linewidth}
+\begin{tabular}{l|cccc}
+$s$ & $0$ & $\frac{1}{2}$ & $1$ & \ldots\\\hline
+$m_s$ & $0$ & $-\frac{1}{2},\; \frac{1}{2}$ & $-1,0,1$ & \ldots\\
+\end{tabular}
+\end{minipage}
+\caption{Mögliche Wertepaare für $(s,m_s)$.}
+\end{figure}
+
+Teilchen mit geradzahligem Spin $s=0,1,2,\ldots$ werden als \emph{Bosonen}
+bezeichnet, Teilchen mit halbzahligem Spin
+$s=\frac{1}{2},\frac{3}{2},\ldots$ als \emph{Fermionen}.
+
+\begin{bemn}
+Bei dieser Überlegung haben wir nicht über die Interpretation von $m_s$ und $s$
+gesprochen, sondern nur ausgehend von der Isotropie  in 3 Dimensionen mögliche
+``Arten'' von Punktteilchen diskutiert, die diese Isotropie nicht verletzen. Da
+die Drehimpulsoperatoren Erhaltungsgrößen beschreiben, haben wir  ihre Struktur
+als ``Vorbild'' für die Spinoperatoren hergenommen.
+
+Ein Punktteilchen mit Spin $s$ kommt also im Prinzip in $2s+1$ ``Arten'' vor.
+Teilchen, welche in einer (un)geraden Anzahl von ``Arten'' vorkommen, nennt man
+\emph{Fermionen} (\emph{Bosonen}). In zwei Dimensionen würden die Überlegungen
+übrigens zu einem anderen Schluss führen, denn dort gibt es ein Kontinuum von
+Teilchen (Anyonen). Die Spinoperatoren in 2 Dimensionen sind trivial.\maphere 
+\end{bemn}
+
+\subsection{Permutationssymmetrie von Bosonen und Fermionen}
+
+Aus der Sicht der klassischen Mechanik lassen sich alle Teilchen zu jeder Zeit
+genau unterscheiden.
+
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(-0.1,-2)(4.34,2)
+\pscircle(0.25,1.68){0.3}
+\pscircle(4,1.56){0.3}
+\psline{->}(0.46,1.35)(1.68,-0.19)
+\psline{->}(3.76,1.15)(1.9,-0.21)
+\psdots[linecolor=darkblue,dotsize=0.2](1.78,-0.33)
+\psline[linestyle=dotted]{->}(1.6,-0.55)(0.52,-1.97)
+\psline[linestyle=dotted]{->}(1.98,-0.53)(3.62,-1.81)
+\rput(0.25,1.68){\color{gdarkgray}$1$}
+\rput(4,1.56){\color{gdarkgray}$2$}
+\end{pspicture} 
+  \caption{Stoßprozess in der klassischen Mechanik.}
+\end{figure}
+Da man den Ort beliebig genau auflösen kann, lässt sich determinieren, ob
+Teilchen 1 oder Teilchen 2 nach rechts abgelenkt wird.
+
+In der Quantenmechanik sind Teilchen 1 und Teilchen 2 bei gleicher Konfiguration
+jedoch ununterscheidbar, d.h. eine Vertauschung ändert die Physik nicht, weshalb
+die Streuung im klassischen Sinn einen nicht determinierbaren Ausgang hat, es
+kommt zu Überlagerungszuständen.
+
+\subsubsection{Mathematische Formulierung}
+
+Wir wollen nun die Vertauschung von Objekten mathematisch formulieren.
+
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(0,-1.12)(8.8,1.5)
+\psline(0.0,-0.9)(3.7,-0.9)
+\psline(1.66,-1.1)(1.66,1.1)
+
+\psframe[linecolor=darkblue](3.42,0.52)(3.04,0.14)
+\pscircle[linecolor=yellow](0.56,0.6){0.22}
+\psline{->}(1.66,-0.9)(3.02,0.1)
+\psline{->}(1.66,-0.9)(0.76,0.36)
+
+\psline(5.0,-0.9)(8.7,-0.9)
+\psline(6.66,-1.1)(6.66,1.1)
+
+\psframe[linecolor=yellow](5.7409377,0.78)(5.3409376,0.38)
+\pscircle[linecolor=darkblue](8.200938,0.28){0.22}
+
+\psline{->}(6.66,-0.9)(8.02,0.1)
+\psline{->}(6.66,-0.9)(5.76,0.36)
+
+\psbezier[linecolor=darkblue]{->}(3.2058887,0.7)(3.7058887,1.4)(4.685889,1.4)(5.405889,0.85)
+
+\rput(3.6,0){\color{gdarkgray}$\vec{r}_1$}
+\rput(0.3,0.25){\color{gdarkgray}$\vec{r}_2$}
+
+\rput(8.6,0){\color{gdarkgray}$\vec{r}_1$}
+\rput(5.3,0.2){\color{gdarkgray}$\vec{r}_2$}
+
+\rput(4.3,1){\color{gdarkgray}$\hat{P}$}
+\end{pspicture}
+  \caption{Vertauschungsoperation bei zwei Objekten.}
+\end{figure}
+
+Dabei ist zu berücksichtigen, dass eine zweifache Vertauschung wieder zum
+Ausgangszustand zurückführt. Die Eigenwertgleichung des Vertauschungsoperators
+hat daher die Gestalt,
+\begin{align*}
+&\hat{P}(\Psi(\vec{r}_1,\vec{r}_2)) = p\Psi(\vec{r}_2,\vec{r}_1).\\
+&\hat{P}^2(\Psi(\vec{r}_1,\vec{r}_2)) = p\hat{P}(\Psi(\vec{r}_2,\vec{r}_1))
+= p^2\Psi(\vec{r}_1,\vec{r}_2) = \Psi(\vec{r}_1,\vec{r}_2).
+\end{align*}
+Es muss gelten $p=\pm1$ weshalb wir zwei Arten von Parität erhalten,
+\begin{align*}
+&\hat{P}\Psi = +\Psi,\qquad \text{symmetrisch},\\
+&\hat{P}\Psi = -\Psi,\qquad \text{antisymmetrisch}.
+\end{align*}
+
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(0,-1.59)(4.92,1.59)
+\psellipse[linecolor=darkblue](1.36,0.04)(1.36,0.71)
+\psellipse[linecolor=yellow](3.56,0.02)(1.36,0.71)
+
+\rput(2.44,0.035){\color{gdarkgray}+}
+\rput(4.66,0.055){\color{gdarkgray}-}
+\rput(0.26,0.055){\color{gdarkgray}-}
+
+\rput(3.55,-0.9){\color{gdarkgray}2}
+\rput(1.33,0.955){\color{gdarkgray}1}
+
+\psdots[dotsize=0.2,linecolor=darkblue](1.36,0.03)
+\psdots[dotsize=0.2,linecolor=yellow](3.56,0.03)
+
+\psarc{<-}(2.66,-0.08){1.42}{213.2317}{306.25385}
+\psarc{<-}(2.32,0.15){1.42}{30.650667}{129.61069}
+\end{pspicture}
+\qquad
+\begin{pspicture}(0,-1.59)(4.92,1.59)
+\psellipse[linecolor=yellow](1.36,0.04)(1.36,0.71)
+\psellipse[linecolor=darkblue](3.56,0.02)(1.36,0.71)
+
+\rput(2.44,0.035){\color{gdarkgray}-}
+\rput(4.66,0.055){\color{gdarkgray}+}
+\rput(0.26,0.055){\color{gdarkgray}+}
+
+\rput(3.55,-0.9){\color{gdarkgray}1}
+\rput(1.33,0.955){\color{gdarkgray}2}
+
+\psdots[dotsize=0.2,linecolor=yellow](1.36,0.03)
+\psdots[dotsize=0.2,linecolor=darkblue](3.56,0.03)
+
+%\psarc{<-}(2.66,-0.08){1.42}{213.2317}{306.25385}
+%\psarc{<-}(2.32,0.15){1.42}{30.650667}{129.61069}
+\end{pspicture} 
+  \caption{Zur Permutationssymmetrie.}
+\end{figure}
+
+\begin{bspn}
+Im Fall von zwei Teilchen ist die Eigenfunktion des Vertauschungsoperators
+gegeben durch,
+\begin{align*}
+\Psi_\pm = \frac{1}{\sqrt{2}}\left(\Psi_1(\vec{r}_1)\Psi_2(\vec{r}_2) \pm
+\Psi_1(\vec{r}_2)\Psi_2(\vec{r}_1) \right),
+\end{align*}
+wobei bei Bosonen ein $+$ und bei Fermionen ein $-$ auftritt.\bsphere
+\end{bspn}
+
+\begin{bemn}
+Von Teilchen 1 aus gesehen entspricht die Vertauschung mit Teilchen 2 gerade
+einer Rotation um $\pi$. Wie wir auf  S. \pageref{subsubsec:Azimutalgleichung}
+sehen werden, sind die $m_s$ Eigenfunktionen von der Form,
+\begin{align*}
+\Psi \sim e^{im_s\ph}.
+\end{align*}
+Für $m_s = \frac{1}{2}$ bedeutet das für ein Teilchen, dass man $\ph=4\pi$
+(d.h. zwei Umdrehungen) benötigt, um zum gleichen Zustand zurückzukommen. Für
+zwei Teilchen, die jeweils um $\pi$ umeinander rotiert werden
+(Vertauschung), bedeutet das, dass ihre relative Phase
+$\exp\left(i\frac{1}{2}(\pi_1+\pi_2)\right) = -1$ beträgt.\maphere
+\end{bemn}
+
+\subsubsection{Pauli-Verbot}
+Betrachtet man zwei Fermionen, die durch die Wellenfunktionen
+\begin{align*}
+\Psi_1(\vec{r}_1),\; \Psi_2(\vec{r}_2),
+\end{align*}
+beschrieben werden, am gleichen Ort 
+$\vec{r}_1=\vec{r}_2=\vec{r}$, so gilt aufgrund der Parität für die
+Zweiteilchenwellenfunktion
+\begin{align*}
+\Psi_-(\vec{r}) = \frac{1}{\sqrt{2}}\left(\Psi_1(\vec{r})\Psi_2(\vec{r})-
+\Psi_2(\vec{r})\Psi_1(\vec{r})\right) = 0.
+\end{align*} 
+Die Wahrscheinlichkeit bei einer Messung beide Teilchen am gleichen Ort
+vorzufinden ist also Null!
+
+
+\begin{figure}[!htbp]
+\centering
+\begin{tabular}{l|c|c}
+&\color{darkblue}\textbf{Fermionen} & \color{darkblue}\textbf{Bosonen}\\\hline
+\textbf{Parität} &
+$\Psi(\vec{r}_1,\vec{r}_2) = -\Psi(\vec{r}_2,\vec{r}_1)$ &
+$\Psi(\vec{r}_1,\vec{r}_2) = \Psi(\vec{r}_2,\vec{r}_1)$\\
+& ungerade & gerade \\\hline
+\textbf{Spin} &
+$s=\frac{1}{2},\frac{3}{2},\frac{5}{2},\ldots$
+&
+$s=0,1,2,\ldots$\\
+& halbzahlig &
+ganzzahlig\\\hline
+&
+$
+\Psi(\vec{r}_1,\vec{r}_1) = -\Psi(\vec{r}_1,\vec{r}_1)
+\Rightarrow \Psi(\vec{r}_1,\vec{r}_1) \equiv 0$
+ & $\Psi(\vec{r}_1,\vec{r}_1) \neq 0$\\
+& Pauli Prinzip
+& (Durchdringen erlaubt)\\\hline &
+$e^-$, $p^+$, $n^0$, $\gamma_e$, $\mu$&
+Photon $\gamma$, Schwache WW $W^\pm$, $Z$\\
+& $D$, ${}^3He$, ${}^6 Li$, ${}^{53} Cr$ &
+ $H$, ${}^4 He$, ${}^{87}Rb$, ${}^{52} Cr$, $C_{60}$, $O_2$
+\end{tabular}
+\caption{Übersicht Fermionen, Bosonen.}
+\end{figure}
+
+\subsection{Parität}
+Mit Parität wird eine Symmetrieeigenschaft eines Systems unter Punktspiegelung
+bezeichnet. Der Paritätsoperator ist gegeben durch
+\begin{align*}
+\hat{P}: \vec{r} \mapsto -\vec{r}.
+\end{align*}
+
+\begin{figure}[!ht]
+  \centering
+\begin{pspicture}(0,-1.5092187)(5.44,1.5092187)
+\psline{->}(1.16,-0.28921875)(1.16,0.81078124)
+\psline{->}(1.14,-0.26921874)(2.32,-0.26921874)
+\psline{->}(1.16,-0.26921874)(0.42,-0.7892187)
+\psline[linestyle=dotted,dotsep=0.06cm](1.16,-0.24921875)(1.16,-1.3492187)
+\psline[linestyle=dotted,dotsep=0.06cm](1.18,-0.26921874)(0.0,-0.26921874)
+\psline[linestyle=dotted,dotsep=0.06cm](1.16,-0.26921874)(1.9,0.25078124)
+\psline{->}(4.26,-0.24921875)(4.26,-1.3492187)
+\psline{->}(4.28,-0.26921874)(3.1,-0.26921874)
+\psline{->}(4.26,-0.26921874)(5.0,0.25078124)
+\psline[linestyle=dotted,dotsep=0.06cm](4.26,-0.28921875)(4.26,0.81078124)
+\psline[linestyle=dotted,dotsep=0.06cm](4.24,-0.26921874)(5.42,-0.26921874)
+\psline[linestyle=dotted,dotsep=0.06cm](4.26,-0.26921874)(3.52,-0.7892187)
+
+\psdots(1.16,-0.26921874)
+\psdots(4.26,-0.26921874)
+
+\psbezier[linecolor=darkblue]{->}(1.94,0.73078126)(2.34,1.2307812)(3.0,1.2307812)(3.48,0.67078125)
+
+\rput(2.2878125,-0.43921876){\color{gdarkgray}$y$}
+\rput(0.52546877,-0.89921874){\color{gdarkgray}$x$}
+\rput(0.9934375,0.86078125){\color{gdarkgray}$z$}
+\rput(4.44125,-1.3592187){\color{gdarkgray}$z'$}
+\rput(5.1625,0.26078126){\color{gdarkgray}$x'$}
+\rput(3.19375,0){\color{gdarkgray}$y'$}
+\rput(2.7307813,1.3407812){\color{gdarkgray}$\hat{P}$}
+
+\end{pspicture} 
+  \caption{Paritätsspiegelung eines rechtshändigen Koordinatensystem in ein
+  linkshändiges.}
+\end{figure}
+Zweifache Anwendung der Symmetrieoperation führt das System in sich selbst über,
+\begin{align*}
+\hat{P}^2 = \Id,\qquad\Rightarrow \text{Eigenwerte }\pm1.
+\end{align*}
+Polare Vektoren ändern unter der Paritätsoperation ihr Vorzeichen,
+\begin{align*}
+&\hat{P}\vec{r} = -\vec{r},\\
+&\hat{P}\vec{p} = -\vec{p},
+\end{align*}
+während das Vorzeichen axialer Vektoren invariant ist,
+\begin{align*}
+&\hat{P}\vec{L} = \hat{P}(\vec{r}\times\vec{p}) = -\vec{r}\times -\vec{p} =
+\vec{L}.
+\end{align*}
+Magnetische und elektrische Felder und Dipole transformieren wie folgt,
+\begin{align*}
+&\hat{P}\vec{E} = -\vec{E},
+&& \op{d} = e\op{r} \mapsto -\op{d}\\
+&\hat{P}\vec{B} = \vec{B},
+&& \op{\mu} = e\left(\op{r}\times\op{p}\right) \mapsto \op{\mu}
+\end{align*}
+
+Falls $\nrm{\hat{H},\hat{P}}=0$, so ist $\hat{P}$ eine Symmetrieoperation und
+die Parität erhalten, d.h. die Physik im Spiegel betrachtet ist nicht von der
+Realtität unterscheidbar.
+
+\begin{bspn}
+\begin{enumerate}[label=\arabic{*}.)]
+  \item Die elektromagentische Wechselwirkung erhält die Parität. Z.B.
+\begin{align*}
+&\op{H} = \ldots\hat{B}^2 + \ldots\hat{E}^2\\
+&\op{H} \sim \vec{d}\vec{E},\quad \vec{H} \sim \vec{\mu}\vec{B}.
+\end{align*}
+  \item Für die schwache Wechselwirkung ist $\nrm{\hat{H},\hat{P}}\neq0$, d.h.
+  die Parität ist keine universelle Symmetrie.
+  \item Im Wasserstoff-Atom ist die elektromagnetische Wechselwirkung dominant,
+  daher sind die Wasserstoff-Zustände Eigenfunktionen zu $\op{P}$.
+
+\begin{figure}[H]
+\centering
+\begin{pspicture}(-0.5,-2.2)(10,2.2)
+
+\pscircle(1.2,0.2){1.18}
+\psdots[dotsize=0.12](1.2,0.2)
+
+\rput(1.2,2){\color{gdarkgray}$l=0$}
+
+\rput(1.2,-1.4){\color{gdarkgray}$P=(-1)^l=+1$}
+
+\rput(1.2,-1.8){\color{gdarkgray}symmetrisch unter $\hat{P}$}
+
+\psbezier(6.1,1.85)(4.7,1.85)(7.5,-1.2528125)(6.1,-1.27)(4.7,-1.2928125)(7.54,1.85)(6.1,1.85)
+\psbezier(8.84,1.85)(7.42,1.85)(10.22,-1.2528125)(8.85,-1.27)(7.42,-1.2928125)(10.26,1.85)(8.84,1.85)
+
+\psline{->}(6.52,0.28)(8.4,0.28)
+
+\rput(6.1,1.45){+}
+\rput(6.1,-0.7){-}
+
+\rput(8.85,1.45){-}
+\rput(8.85,-0.7){+}
+
+\rput(7.43,2){\color{gdarkgray}$l=1$}
+
+\rput(7.43,0.6571875){\color{gdarkgray}$\hat{P}$}
+\rput(7.43,-1.4){\color{gdarkgray}$P=(-1)^l=-1$}
+
+\rput(7.43,-1.8){\color{gdarkgray}assymmetrisch unter $\hat{P}$}
+\end{pspicture} 
+  \caption{Symmetrie der Zustände eines Wasserstoffatoms.\bsphere}
+\end{figure}
+\end{enumerate}
+\end{bspn}
+
+\subsubsection{Paritätserhaltung bei Übergängen von Zuständen}
+
+Die Wahrscheinlichkeit für den Übergang vom Zustand $i$ in den
+Zustand $f$ unter $\hat{O}$ ist gegeben durch das Matrixelemnt,
+\begin{align*}
+A_{i\to f} = \int\dV \Psi_f \hat{O}\Psi_i.
+\end{align*}
+Ob ein Übergang möglich ist, kann man an der Symmetrie der
+Wellenfunktion erkennen. Ist $\hat{P}\Psi_f \hat{O}\Psi_i=-1$, so ist 
+die Wellenfunktion ungerade und das Integral verschwindet, der Übergang ist also
+verboten!
+
+Betrachten wir nun die Eigenwerte $P_f$, $P_O$ und $P_i$ von $\hat{P}$
+bezüglich $\Psi_f$, $\hat{O}$ und $\Psi_i$, so ergibt sich als Auswahlkriterium
+\begin{align*}
+\begin{cases}
+P_fP_OP_i = 1,&\text{Übergang möglich},\\
+P_fP_OP_i = -1,&\text{Übergang unmöglich}.
+\end{cases}
+\end{align*}
+
+\begin{pspicture}(0,-1.6471875)(6.28,1.7)
+\psline{->}(0.9,-1.2228125)(0.9,0.7771875)
+\psline{->}(0.0,-0.3028125)(2.0,-0.3028125)
+\psline{->}(3.04,-1.2228125)(3.04,0.7771875)
+\psline{->}(2.14,-0.3028125)(4.14,-0.3028125)
+\psline{->}(5.16,-1.2228125)(5.16,0.7771875)
+\psline{->}(4.26,-0.3028125)(6.26,-0.3028125)
+
+
+\psbezier[linecolor=darkblue](0.04,-0.28388345)(0.04,-0.28388345)(0.096880935,0.19622183)(0.46,0.1971875)(0.82311904,0.19815317)(1.02,-0.8028125)(1.36,-0.8028125)(1.7,-0.8028125)(1.8,-0.30315688)(1.8,-0.30315688)
+\psline[linecolor=darkblue](2.24,-1.0228125)(3.96,0.5171875)
+\psbezier[linecolor=darkblue](4.28,-0.2828125)(4.727921,-0.2828125)(4.8657427,0.2371875)(5.1586137,0.2371875)(5.451485,0.2371875)(5.589307,-0.3028125)(6.0,-0.2828125)
+
+
+\rput(2.65,1.4671875){\color{gdarkgray}$\int\dV \Psi_f \hat{O}\Psi_i$}
+
+\psline{->}(2.7,1.2571875)(1.62,0.8371875)
+\psline{->}(3.04,1.2371875)(3.04,0.7971875)
+\psline{->}(3.38,1.2571875)(4.46,0.8371875)
+
+\rput(0.895,-1.4928125){\color{gdarkgray}$P_f=-1$}
+\rput(3.065,-1.4928125){\color{gdarkgray}$P_0=-1$}
+\rput(5.155,-1.4928125){\color{gdarkgray}$P_i=1$}
+\end{pspicture} 
+
+Für das magnetische und das elektrische Dipolmoment gilt,
+\begin{align*}
+&\vec{d}= e\vec{r}\mapsto -\vec{d},&&\Rightarrow \vec{H}=\vec{d}\cdot\vec{E}
+= \vec{d}\cdot\vec{E}\\
+&\vec{\mu}= e\left(\vec{r}\times\vec{p}\right)\mapsto\vec{\mu}, &&\Rightarrow
+\vec{H}=\vec{\mu}\cdot\vec{B} =
+\vec{\mu}\cdot\vec{B}.
+\end{align*}
+Wir erhalten somit die Auswahlregeln
+\begin{align*}
+&\lin{f|\vec{d}|i}\neq 0\Leftrightarrow P_i\neq P_f\tag{E1}\\
+&\lin{f|\vec{\mu}|i}\neq 0\Leftrightarrow P_i= P_f\tag{M1}
+\end{align*}
+
+\begin{figure}[!ht]
+\centering
+\begin{pspicture}(-0.1,-1.27)(2.9,1.27)
+\psline(0.3925,1.17)(0.3925,-1.25)
+\psline(0.3925,-1.23)(2.0325,-1.23)
+\psline(2.0125,-1.23)(2.0125,1.19)
+\psline(0.3925,-0.93)(2.0125,-0.93)
+\psline(0.3925,-0.43)(2.0125,-0.43)
+\psline(0.3925,0.77)(2.0125,0.77)
+
+\psbezier[linecolor=darkblue](0.3925,-0.91)(0.6725,-0.63)(1.7325,-0.71)(2.0125,-0.93)
+\psbezier[linecolor=darkblue](0.3925,-0.43)(0.5925,-0.13)(0.9125,-0.15)(1.2125,-0.43)(1.5125,-0.71)(1.7125,-0.71)(1.9925,-0.43)
+\psbezier[linecolor=darkblue](0.3925,0.77)(0.6125,1.25)(0.73669755,1.21)(0.93916667,0.77)(1.1416358,0.33)(1.2925,0.33)(1.5060803,0.77)(1.7196605,1.21)(1.8125,1.25)(2.0125,0.75)
+
+\psline[linestyle=dotted,dotsep=0.06cm]{->}(0.5725,-0.43)(0.5725,-0.93)
+\psline[linestyle=dotted,dotsep=0.06cm]{->}(1.7725,0.77)(1.7725,-0.41)
+
+\rput(2.4639063,0.84){\small\color{gdarkgray}$n=2$}
+
+\rput(2.449375,-0.38){\small\color{gdarkgray}$n=1$}
+
+\rput(2.465,-0.9){\small\color{gdarkgray}$n=0$}
+
+\rput(1.4867188,0.26){\small\color{gdarkgray}$E1$}
+\rput(0.16671875,-0.66){\small\color{gdarkgray}$E1$}
+\end{pspicture}
+\qquad
+\begin{pspicture}(0,-0.6)(3.1,0.6)
+\psframe(3,0.6)(0.0,-0.6)
+\rput[l](0.2,0.31){$E1:$}
+\rput[l](0.2,-0.31){$M1:$}
+\rput[l](1.15,0.31){$\Delta n=1,3,...$}
+\rput[l](1.15,-0.31){$\Delta n=2,4,...$}
+\end{pspicture}
+\caption{Mögliche Übergange mit $\Delta n$ ungerade.}
+\end{figure}
+
+
+\begin{bspn}
+Betrachten wir den Übergang von ${}^3P_2$ zu ${}^3S_1$ im Wasserstoffatom.
+
+\begin{figure}[!ht]
+  \centering
+  \begin{pspicture}(-2.1,-1.2)(7.4,1.2)
+
+\psbezier{->}(2.9721875,0.7107813)(2.4521875,-0.08921875)(2.4321876,1.0707812)(1.8121876,0.41078126)
+\psbezier{<-}(1.9121875,0.01078125)(2.5521874,-0.44921875)(1.8121876,-0.68921876)(2.4121876,-0.92921877)
+\psbezier{->}(0.3121875,0.45078126)(0.8321875,-0.12921876)(0.8521875,1.0307813)(1.3321875,0.45078126)
+
+\rput(1.6289062,0.20578125){\color{darkblue}\Large ${}^3S_1$}
+
+\rput[l](3.1470313,0.9607813){\color{gdarkgray}$S\entspr l=0$ Bahndrehimpuls}
+\rput[l](2.6,-0.9792187){\color{gdarkgray}$\abs{\vec{j}}=\abs{\vec{s}+\vec{l}}$
+Gesamtdrehimpuls}
+\rput[r](0.8,0.6407812){\color{gdarkgray}Multiplizität $2s+1$}
+\end{pspicture} 
+  \caption{Notation der Atom-Zustände.}
+\end{figure}
+
+Die Wahrscheinlichkeit ist proportional zum Dipolmatrixelement
+\begin{align*}
+\text{Wsk} \propto \abs{\bra{{}^3S_1}\op{d}\op{E}\ket{{}^3P_2}}^2 =
+\abs{\int\dV \Psi_{{}^3S_1}^*\op{r}\Psi_{{}^3P_2}}^2 \neq 0,
+\end{align*}
+d.h. der Übergang ist erlaubt. Betrachten wir hingegen den Übergang von
+${}^3P_2$ zu ${}^3P_0$, dann ist das Integral antisymmetrisch,
+\begin{align*}
+\bra{{}^3P_0}\op{r}\ket{{}^3P_2} = 0,
+\end{align*} 
+d.h. ein Übergang aufgrund elektrischer Dipolstrahlung ist nicht erlaubt.\bsphere
+\end{bspn}
+
+\subsubsection{Paritätserhaltung bei Reaktionen}
+
+Da die Parität keine kontinuierliche Transformation wie bspw. eine Drehung ist,
+ist die Parität eine multiplikative Erhaltungsgröße, d.h. $\prod_i P_i$ ist
+erhalten und nicht wie bspw. $\sum_i l_i$ wie bei der Drehung. 
+
+Betrachte eine chemische Reaktion
+\begin{align*}
+a+b\mapsto c+d.
+\end{align*}
+Aufgrund der multiplikativen Erhaltung gilt für die Reaktion,
+\begin{align*}
+P_aP_b\cdot(-1)^l = P_cP_d\cdot(-1)^{l'},
+\end{align*}
+wobei $P_i$ die Eigenparität des Reaktionspartners $i$ und $l$, $l'$ den
+Bahndrehimpuls vor bzw. nach der Reaktion beschreiben.
+
+\subsubsection{Paritätsverletzung bei Schwacher Wechselwirkung}
+Die physikalischen Gesetze, welche die starke und elektromagnetische Wechselwirkung
+ beschreiben, sind invariant unter einer räumlichen Spiegelung des betrachteten
+  Systems, dies wurde in der ersten Hälfte des 20. Jhd. in einer Vielzahl von
+  Experimenten bestätigt. Jedoch äußerten T.D. Lee und C.N. Yang 1956
+  Bedenken, dass die Paritätsinvarianz auch
+  für die schwache Wechselwirkung gilt und schlugen Experimente zur Überprüfung
+  vor.
+
+1957 wurde im Experiment von C.S. Wu die Paritätsverletzung der Schwachen
+Wechselwirkung nachgewiesen. Dabei wurde der $\beta$-Zerfall von ${}^{60}Co$
+untersucht,
+\begin{align*}
+n\mapsto p^+ + e^- + \overline{\nu}_e.
+\end{align*}
+Es wurde festgestellt, dass es bei der Emission der Elektronen relativ zur
+Kernspinachse eine Vorzugsrichtung gibt. D.h. die schwache Wechselwirkung
+koppelt nur an ``linkshändige'' Elektronen (z.B. Spin $\downarrow$).
+
+\sfigure[H]%
+	{1-WuExperimentAufbau.pdf}%
+	{G. Otter, R. Honecker, Atome –Moleküle –Kerne: Band II, Molekül-und Kernphysik, S. 378}%
+	{Experimentelle Anordnung des Wu-Experiments. b) Zählraten der
+	$\gamma$-Detektroen. c) relative $\beta^-$-Zählraten für zwei entgegengesetzte
+ $\vec{B}_0$-Richtungen.}
+
+\subsection{Zeitspiegelung}
+
+Die Zeitspiegelung ist eine weitere diskrete Symmetrieoperation, die den
+Ablauf der Zeit umkehrt.
+\begin{align*}
+T:\; & t\mapsto -t, && \vec{x}\mapsto \vec{x},\\
+&\vec{p}\mapsto -\vec{p},&&\vec{L}\mapsto -\vec{L},\\
+&\vec{E}\mapsto \vec{E},&&\vec{B}\mapsto -\vec{B}.
+\end{align*}
+
+Die Newtonschen Bewegungsgleichungen der klassischen Mechanik enthalten nur 2.
+Ableitungen nach der Zeit. Daher ist die klassische Mechanik invariant unter
+Zeitspiegelung so lange keine Dämpfung auftritt.
+
+Die Maxwell Gleichungen enthalten ebenfalls nur 2. Ableitungen nach der Zeit
+und sind somit ebenfalls invariant.
+
+Wir wollen nun den Zeitspiegelungsoperator in der Quantenmechanik ``naiv'' durch
+\begin{align*}
+\hat{T}: \Psi(x,t) \mapsto \Psi(x,-t),
+\end{align*}
+definieren und die Schrödingergleichung betrachten.
+\begin{align*}
+i\hbar \frac{\partial \hat{T}\Psi(x,t)}{\partial t} \overset{!}{=}
+\hat{H}\hat{T}\Psi(x,t)
+\Leftrightarrow
+-i\hbar \frac{\partial}{\partial (-t)}\Psi(x,-t) = \hat{H}\Psi(x,-t).
+\end{align*}
+Wir sehen, dass die zeitgespiegelte Wellenfunktion $\hat{T}\Psi$ die
+Schrödingergleichung \textit{nicht} erfüllt. Die korrekte Definition des
+Zeitspiegelungsoperators ist daher,
+\begin{align*}
+\hat{T}: \Psi(x,t)\mapsto \Psi^*(x,-t).
+\end{align*}
+Nun erfüllt $\hat{T}\Psi$ die Schrödingergleichung. Aufgrund der komplexen
+Konjugation ist $\hat{T}$ kein unitärer Operator und besitzt weder 
+Eigenwerte noch Eigenfunktionen!
+
+\begin{bemn}[Bemerkungen.]
+\begin{enumerate}[label=\arabic{*}.)]
+  \item 
+Es ist nicht möglich, $\hat{T}$ nur durch einen Wechsel des Bezugssystems zu
+realisieren.
+\item Experimentell wurde $\hat{T}$ durch Reversibilitätsexperimente getestet.
+Bei der schwachen Wechselwirkung ($K^0$-Zerfall) wurden Hinweise auf eine
+$\hat{T}$-Verletzung gefunden. $\hat{T}$ ist also keine universelle
+Symmetrie.\maphere
+\end{enumerate}
+\end{bemn}
+
+\subsection{Ladungsumkehr}
+Die innere Symmetrie basiert auf Konventionen. Z.B. ist die Ladung des
+Elektrons negativ definiert, während die des Protons positiv definiert ist. Die
+\emph{Ladungsumkehr} $\hat{C}$ beschreibt die Umkehrung dieser Konvention:
+\begin{align*}
+\hat{C}\ket{\underbrace{m,\vec{p},s,m_s}_{\text{\tiny
+äußere,}},\underbrace{q,B,L,S\ldots}_{\text{\tiny innere Eigenschaften}}}
+= \underbrace{e^{i\phi}}_{\text{\tiny
+Phase}}\ket{m,\vec{p},s,m_s,-q,-B,-L,-S,\ldots}
+\end{align*}
+$q$ steht hier für die Ladung bezüglich der elektromagnetischen Wechselwirkung,
+während $B$ und $S$ Ladungen bezüglich der straken Wechselwirkung und $L$ Ladung
+bezüglich der schwachen Wechselwirkung sind. Man spricht hier auch von
+Farbladungen.
+
+Die Ladungsumkehr spiegelt sowohl elektrische als auch magnetische Felder,
+\begin{align*}
+\vec{E}\mapsto -\vec{E},\qquad \vec{B} \mapsto -\vec{B}.
+\end{align*}
+
+\begin{bspn}
+Betrachten wir ein linkshändiges Neutrino $\nu_L$ unter Ladungsumkehr
+\begin{align*}
+\hat{C}\ket{\nu_L} = e^{i\phi}\ket{\overline{\nu}_L}, 
+\end{align*}
+ergibt sich ein linkshändiges Antineutrino. Es existieren jedoch keine
+linkshändigen Antineutrinos bzw. sie koppeln nicht mit der schwachen
+Wechselwirkung. Es findet also eine vollständige Symmetriebrechnung bei der
+schwachen Wechselwirkung statt. Für $\hat{C}\hat{P}$ gilt
+\begin{align*}
+\hat{C}\hat{P}\ket{\nu_L} = e^{i\phi'}\ket{\overline{\nu}_R}.
+\end{align*}
+$\overline{\nu}_R$ existiert und koppelt mit der Schwachen Wechselwirkung.
+Jedoch wird auch  $\hat{C}\hat{P}$ beim $K^0$-Zefall verletzt und ist
+daher ebenso keine universelle Symmetrie.\bsphere
+\end{bspn}
+
+Für neutrale Teilchen gilt,
+\begin{align*}
+\hat{C}\ket{m,\vec{p},s,m_s,q=0,B=0,\ldots} =
+e^{i\phi}\ket{m,\vec{p},s,m_s,q=0,B=0,\ldots}
+\end{align*}
+Es muss daher gelten $\hat{C}^2 = \Id$ und daher sind die Eigenwerte von
+$\hat{C}$ gerade $e^{i\phi}=\pm 1$. Wir erhalten somit gerade und
+ungerade Ladungsparität.
+\begin{bspn}
+Da $\op{C}\vec{E} = -\vec{E}$ und $\op{C}\vec{B} = -\vec{B}$ besitzt
+das Photon eine ungerade Ladungsparität.\bsphere
+\end{bspn}
+Wir erhalten dadurch Auswahlregeln, die uns bei Aussagen über Zerfallsprozesse
+unterstützen.
+\begin{bspn}
+Ein neutrales $\pi^0$ zerfällt durch Emission von 2 Photonen,
+\begin{align*}
+&\pi^0 \to 2\gamma,\\
+&\hat{C}\ket{\pi^0} = +\ket{\pi^0}.
+\end{align*}
+Die Emission von einem oder drei Photonen ist daher verboten.\bsphere
+\end{bspn}
+
+\subsection{Zusammenfassung diskrete Symmetrien}
+\begin{table}[H]
+\centering
+\begin{tabular}[c]{l|lll}
+ & $\hat{P}$ & $\hat{T}$ & $\hat{C}$\\\hline
+$\vec{x}$ & -$\vec{x}$ & $\vec{x}$ & $\vec{x}$\\
+$\vec{p}$ & -$\vec{p}$ & -$\vec{p}$ & $\vec{p}$\\
+$\vec{L}$ & $\vec{L}$ & -$\vec{L}$ & $\vec{L}$\\
+$\vec{E}$ & -$\vec{E}$ & $\vec{E}$ & -$\vec{E}$\\
+$\vec{B}$ & $\vec{B}$ & -$\vec{B}$ & -$\vec{B}$\\
+$\vec{q}$ & $\vec{q}$ & $\vec{q}$ & -$\vec{q}$  
+\end{tabular}
+\end{table}
+
+Bisher wurde die $\hat{C}\hat{P}\hat{T}$ Symmetrie als \textit{grundlegende
+Symmetrie} identifiziert. Es ist kein Experiment bekannt bei dem eine
+ $\hat{C}\hat{P}\hat{T}$ Symmetriebrechnung einer Wechselwirkung nachgewiesen
+werden kann. D.h. Teilchen und Antiteilchen haben gleiche Masse, gleiche
+Lebensdauern und gleich starke aber entgegengesetzte magnetische Momente bzw.
+elektrische Ladungen.

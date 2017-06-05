@@ -1,0 +1,236 @@
+% =============================================================================
+% Titel:	Experimentalphysik IV - Mitschrieb
+% Erstellt:	SS 09
+% Dozent:	Prof. Dr. Tilman Pfau
+% Autor:	Jan-Cornelius Molnar
+% =============================================================================
+\documentclass[paper=a5,fleqn,DIV=calc]{scrartcl}
+
+% =============================================================================
+% 					Benötigte Pakete
+% =============================================================================
+\usepackage{janmcommon}
+\usepackage{janmscript}
+\usepackage{listings}
+\usepackage{float}
+\restylefloat{figure}
+\usepackage[innercaption]{sidecap}
+
+% =============================================================================
+% 					Ana-Theorem-Style
+% =============================================================================
+% Theorem Umgebungen *MIT* Numerierung
+\theoremstyle{graymarginwithblueheader}
+\theorembodyfont{\itshape}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{prop}{Satz}[section]
+\newtheorem{lem}[prop]{Lemma}
+\newtheorem{defn}[prop]{Definition}
+\newtheorem{cor}[prop]{Korollar}
+
+\theoremstyle{graymarginwithyellowheader}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{bsp}[prop]{Bsp}
+
+\theoremstyle{graymarginwithitblackheader}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{bem}[prop]{Bemerkung.}
+
+% Theorem Umgebungen *OHNE* Numerierung
+\theoremstyle{graymarginwithblueheadern}
+\theorembodyfont{\itshape}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{propn}{Satz}
+\newtheorem{lemn}{Lemma}
+\newtheorem{corn}{Korollar}
+\newtheorem{defnn}{Definition}
+
+\theoremstyle{graymarginwithyellowheadern}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{bspn}{Bsp}
+
+\theoremstyle{graymarginwithitblackheadern}
+\theorembodyfont{\normalfont}
+\theoremseparator{}
+\theoremsymbol{}
+
+\newtheorem{bemn}{Bemerkung.}
+%\renewcommand{\vec}[1]{\textbf{#1}}
+
+% =============================================================================
+% 					Ana-Überschriften-Style
+% =============================================================================
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\arabic{section}-\arabic{subsection}}
+\renewcommand\thesubsubsection{\small\ensuremath{\blacksquare}\normalsize}
+
+\titleformat{\section}%
+  {\normalfont\bfseries\Huge\color{darkblue}}%
+  {\thesection}%
+  {0.6em}%
+  {}%
+  
+\titleformat{\subsection}%
+  {\normalfont\bfseries\Large\color{darkblue}}%
+  {\thesubsection}%
+  {0.6em}%
+  {}%
+
+\titleformat{\subsubsection}%
+  {\normalfont\bfseries\color{darkblue}}%
+  {\thesubsubsection}%
+  {0.2em}%
+  {}%
+
+\renewcommand{\labelenumi}{{\normalfont(\alph{enumi})}}
+
+\newcommand{\kin}{\text{\tiny kin}}
+
+\newcommand{\oline}[1]{\ensuremath{\overline{\text{#1}}}}
+
+\newcommand{\op}[1]{\hat{\boldmath{#1}}}
+
+\psset{linecolor=gdarkgray}
+\psset{tickcolor=gdarkgray}
+\psset{fillcolor=glightgray}
+
+\newcommand{\scaption}[2]{%
+	\caption[#1]{#1}%
+	\footnotetext{#2}%
+}
+
+\newcommand{\BethgeSchroeder}%
+	{\textit{K. Bethge, U. E. Schröder}, %
+	Elementarteilchen und ihre Wechselwirkungen}
+	
+\newcommand{\BethgeWalter}%
+	{\textit{K. Bethge, G. Walter, B. Wiedemann}, %
+	Kernphysik – Eine Einführung}
+	
+\newcommand{\DemtroederThree}
+	{\textit{W. Demtröder}, %
+	Experimentalphysik 3}
+	
+\newcommand{\DemtroederFour}
+	{\textit{W. Demtröder}, %
+	Experimentalphysik 4}
+
+\newcommand{\FrauenfelderHenley}%
+	{\textit{H. Frauenfelder, E. M. Henley}, %
+	Teilchen und Kerne: Die Welt der subatomaren Physik}
+
+\newcommand{\KuckukKern}%
+	{\textit{T. Mayer-Kuckuk}, %
+	Kernphysik}
+	
+\newcommand{\KuckukAtom}%
+	{\textit{T. Mayer-Kuckuk}, %
+	Atomphysik}
+	
+\newcommand{\HakenWolf}%
+	{\textit{H. Haken, H. C. Wolf}, %
+	Atom-und Quantenphysik}
+	
+\newcommand{\HertelSchulz}%
+	{\textit{I. Hertel, C. P. Schulz}, %
+	Atome, Moleküle und optische Physik 1}
+	
+\newcommand{\Stierstadt}% 
+	{\textit{K. Stierstadt}, %
+	Physik der Materie}
+	
+\newcommand{\TiplerMPFife}%
+	{\textit{P. A. Tipler, R. A. Llewellyn}, %
+	Modern Physics, Fifth Edition}
+	
+\newcommand{\erstesargument}{}
+\newcommand{\zweitesargument}{}
+
+\newcommand{\qfigure}[4]{%
+% 1 - breite der Minipage
+% 2 - breite der Grafik (in der Minipage)
+% 3 - pfad zur Grafik
+% 4 - fußnote
+\begin{minipage}{#1\linewidth}%
+	\renewcommand{\footnoterule}{}%
+	\centering%
+	\includegraphics[width=#2\textwidth]{fig/#3}%
+	\footnotetext{#4}
+\end{minipage}%
+}
+
+\usepackage{twoopt}
+
+\newcommandtwoopt{\sfigure}[5][!htpb][0.8]{%
+ \begin{figure}[#1]%
+  \centering
+  \qfigure{1}{#2}{#3}{#4}
+  \caption{#5}
+ \end{figure}%
+}
+
+\newcommandtwoopt{\rfigure}[5][!htpb][0.6]{%
+ \begin{SCfigure}[5][#1]%
+  \centering%
+  \includegraphics[width=#2\textwidth]{fig/#3}%
+  \caption{#5\\\color{black}\normalfont\footnotesize\textrm{#4}}%
+ \end{SCfigure}%
+}
+
+\newcommand{\twofigures}[1][!htbp]{% erstes optionales Argument
+\begingroup  % Definitionen von \...argument lokal halten
+	\renewcommand{\erstesargument}{#1}% opt. Argument speichern
+	\twofiguresZwei}
+  \newcommand{\twofiguresZwei}[1][0.5]{% zweites optionales Argument
+      \renewcommand{\zweitesargument}{#1}% opt. Argument speichern
+      \twofiguresDrei}
+  \newcommand{\twofiguresDrei}[6][0.5]{% drittes opt. + notwendiges Argument
+   \begin{figure}[\erstesargument]%
+   \centering
+	\qfigure{\zweitesargument}{1}{#2}{#3}
+	\qfigure{#1}{1}{#4}{#5}
+	\caption{#6}
+	\end{figure}%
+\endgroup}
+
+% =============================================================================
+% 					Document-Body
+% =============================================================================
+\begin{document}
+
+% Titel
+\begin{center}
+{\huge\bf Exphys IV - Mitschrieb}
+
+bei Prof. Dr. T. Pfau
+
+Jan-Cornelius Molnar, Version: \today\ \thistime
+\end{center}
+
+% Inhaltsverzeichnis
+\tableofcontents
+
+% Inhalt
+\newpage
+\input{01-Symmetrien.tex}
+
+\newpage
+\input{02-Kerne-Elementarteilchen.tex}
+
+\newpage
+\input{03-Atome.tex}
+
+\end{document}
